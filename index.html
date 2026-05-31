@@ -1,0 +1,1250 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maîtrise le Freelancing — Ebook de Ruth</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --gold: #D4A843;
+    --gold-light: #F5E6B8;
+    --gold-dark: #8A6A1F;
+    --cream: #FBF7F0;
+    --dark: #1A1209;
+    --dark2: #2D2010;
+    --text: #3D2E10;
+    --muted: #7A6540;
+    --accent: #C23B2A;
+    --white: #FFFFFF;
+    --r: 10px;
+  }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--dark);
+    position: relative;
+    padding: 80px 24px 60px;
+    text-align: center;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -80px; left: 50%;
+    transform: translateX(-50%);
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(212,168,67,0.15) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-badge {
+    display: inline-block;
+    background: rgba(212,168,67,0.15);
+    border: 1px solid rgba(212,168,67,0.4);
+    color: var(--gold);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 6px 18px;
+    border-radius: 100px;
+    margin-bottom: 28px;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(36px, 6vw, 64px);
+    font-weight: 900;
+    color: var(--white);
+    line-height: 1.1;
+    margin-bottom: 12px;
+  }
+  .hero h1 span {
+    color: var(--gold);
+    font-style: italic;
+  }
+  .hero-sub {
+    font-size: 18px;
+    color: rgba(255,255,255,0.65);
+    max-width: 540px;
+    margin: 0 auto 36px;
+    font-weight: 300;
+  }
+  .hero-sub strong {
+    color: rgba(255,255,255,0.9);
+    font-weight: 500;
+  }
+  .cta-primary {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--dark);
+    font-weight: 600;
+    font-size: 16px;
+    padding: 16px 40px;
+    border-radius: 100px;
+    text-decoration: none;
+    letter-spacing: 0.3px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+    border: none;
+  }
+  .cta-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(212,168,67,0.35);
+  }
+  .hero-proof {
+    margin-top: 28px;
+    color: rgba(255,255,255,0.45);
+    font-size: 13px;
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    align-items: center;
+  }
+  .hero-proof svg {
+    margin-right: 4px;
+    vertical-align: middle;
+  }
+  .hero-divider {
+    width: 60px; height: 2px;
+    background: linear-gradient(to right, transparent, var(--gold), transparent);
+    margin: 20px auto 0;
+  }
+
+  /* ── SECTIONS ── */
+  .section { padding: 72px 24px; max-width: 760px; margin: 0 auto; }
+  .section-label {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold-dark);
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+  .section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(26px, 4vw, 40px);
+    font-weight: 700;
+    color: var(--dark);
+    line-height: 1.2;
+    margin-bottom: 20px;
+  }
+  .section p { font-size: 16px; color: var(--muted); margin-bottom: 14px; }
+  .pain-list { list-style: none; margin-top: 28px; display: flex; flex-direction: column; gap: 16px; }
+  .pain-list li {
+    display: flex; align-items: flex-start; gap: 14px;
+    background: #fff;
+    border: 1px solid rgba(194,59,42,0.15);
+    border-left: 3px solid var(--accent);
+    padding: 18px 20px;
+    border-radius: var(--r);
+    font-size: 15px;
+    color: var(--text);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+  }
+  .pain-icon { flex-shrink: 0; color: var(--accent); display: flex; align-items: center; justify-content: center; margin-top: 2px; }
+
+  /* ── BOOK ── */
+  .book-section {
+    background: var(--dark2);
+    padding: 72px 24px;
+    text-align: center;
+  }
+  .book-wrap {
+    display: inline-block;
+    position: relative;
+    margin-bottom: 40px;
+  }
+  .book-cover {
+    width: 220px;
+    height: 290px;
+    background: linear-gradient(145deg, #2D2010, #1A1209);
+    border-radius: 4px 14px 14px 4px;
+    border: 1px solid rgba(212,168,67,0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 28px 20px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: -6px 6px 0 rgba(0,0,0,0.4), 6px 0 0 rgba(212,168,67,0.08);
+  }
+  .book-cover::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(ellipse at 30% 20%, rgba(212,168,67,0.12), transparent 60%);
+  }
+  .book-cover-badge {
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+    position: relative;
+    z-index: 1;
+  }
+  .book-cover h3 {
+    font-family: 'Playfair Display', serif;
+    color: var(--white);
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+    line-height: 1.3;
+    margin-bottom: 10px;
+    position: relative;
+    z-index: 1;
+  }
+  .book-cover h3 span { color: var(--gold); font-style: italic; }
+  .book-cover-line {
+    width: 40px; height: 1px;
+    background: rgba(212,168,67,0.5);
+    margin: 12px auto;
+    position: relative; z-index: 1;
+  }
+  .book-cover-author {
+    font-size: 11px;
+    color: rgba(255,255,255,0.5);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative; z-index: 1;
+  }
+  .book-badge-float {
+    position: absolute;
+    top: -14px; right: -14px;
+    width: 60px; height: 60px;
+    background: var(--gold);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--dark);
+    text-align: center;
+    line-height: 1.2;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 16px rgba(212,168,67,0.4);
+  }
+  .book-section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    color: var(--white);
+    margin-bottom: 12px;
+  }
+  .book-section-sub {
+    color: rgba(255,255,255,0.5);
+    font-size: 15px;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  /* ── SKILLS ── */
+  .skills-section { background: var(--white); padding: 72px 24px; }
+  .skills-inner { max-width: 760px; margin: 0 auto; }
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 12px;
+    margin-top: 36px;
+  }
+  .skill-card {
+    background: var(--cream);
+    border: 1px solid rgba(212,168,67,0.2);
+    border-radius: var(--r);
+    padding: 16px 18px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .skill-card:hover { border-color: rgba(212,168,67,0.6); background: var(--gold-light); }
+  .skill-num {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--gold);
+    background: rgba(212,168,67,0.15);
+    width: 26px; height: 26px;
+    border-radius: 6px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .skill-name { font-size: 14px; font-weight: 500; color: var(--dark); line-height: 1.3; }
+
+  /* ── BONUS ── */
+  .bonus-section {
+    background: linear-gradient(135deg, var(--gold-light), #FFF8E8);
+    padding: 72px 24px;
+    text-align: center;
+  }
+  .bonus-card {
+    max-width: 600px;
+    margin: 0 auto;
+    background: var(--white);
+    border: 2px solid var(--gold);
+    border-radius: 20px;
+    padding: 48px 40px;
+    position: relative;
+    box-shadow: 0 12px 32px rgba(212,168,67,0.1);
+  }
+  .bonus-ribbon {
+    position: absolute;
+    top: -16px; left: 50%;
+    transform: translateX(-50%);
+    background: var(--gold);
+    color: var(--dark);
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 6px 20px;
+    border-radius: 100px;
+    white-space: nowrap;
+  }
+  .bonus-icon { margin-bottom: 20px; display: flex; justify-content: center; }
+  .bonus-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    color: var(--dark);
+    margin-bottom: 14px;
+  }
+  .bonus-card p { color: var(--muted); font-size: 15px; line-height: 1.7; }
+
+  /* ── ERRORS ── */
+  .errors-section { background: var(--cream); padding: 72px 24px; }
+  .errors-inner { max-width: 760px; margin: 0 auto; }
+  .error-item {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+  }
+  .error-item:last-child { border-bottom: none; }
+  .error-x {
+    width: 36px; height: 36px;
+    background: rgba(194,59,42,0.1);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    color: var(--accent);
+  }
+  .error-text { font-size: 15px; color: var(--text); }
+  .error-text strong { color: var(--dark); font-weight: 600; display: block; margin-bottom: 4px; font-size: 16px; }
+
+  /* ── AUTHOR ── */
+  .author-section {
+    background: var(--dark);
+    padding: 72px 24px;
+    text-align: center;
+  }
+  .author-avatar {
+    width: 80px; height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+    margin: 0 auto 20px;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    color: var(--white);
+    font-weight: 700;
+    box-shadow: 0 8px 24px rgba(212,168,67,0.2);
+  }
+  .author-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    color: var(--white);
+    margin-bottom: 4px;
+  }
+  .author-title {
+    color: var(--gold);
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+  .author-bio {
+    max-width: 580px;
+    margin: 0 auto;
+    color: rgba(255,255,255,0.7);
+    font-size: 16px;
+    line-height: 1.8;
+  }
+
+  /* ── PRICING ── */
+  .pricing-section {
+    background: var(--cream);
+    padding: 72px 24px;
+    text-align: center;
+  }
+  .price-card {
+    max-width: 440px;
+    margin: 0 auto;
+    background: var(--dark);
+    border-radius: 24px;
+    padding: 48px 40px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(26,18,9,0.1);
+  }
+  .price-card::before {
+    content: '';
+    position: absolute;
+    top: -100px; right: -100px;
+    width: 250px; height: 250px;
+    background: radial-gradient(circle, rgba(212,168,67,0.12), transparent 70%);
+  }
+  .price-label {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 20px;
+    display: block;
+    position: relative; z-index: 1;
+  }
+  .price-amount {
+    font-family: 'Playfair Display', serif;
+    font-size: 56px;
+    font-weight: 900;
+    color: var(--white);
+    line-height: 1;
+    position: relative; z-index: 1;
+  }
+  .price-currency {
+    font-size: 24px;
+    vertical-align: super;
+    font-weight: 300;
+    color: var(--gold);
+  }
+  .price-unit {
+    font-size: 14px;
+    color: rgba(255,255,255,0.4);
+    display: block;
+    margin-top: 8px;
+    position: relative; z-index: 1;
+  }
+  .price-features {
+    list-style: none;
+    margin: 32px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    position: relative; z-index: 1;
+  }
+  .price-features li {
+    display: flex; align-items: flex-start; gap: 12px;
+    font-size: 15px;
+    color: rgba(255,255,255,0.8);
+    text-align: left;
+    line-height: 1.4;
+  }
+  .check {
+    width: 22px; height: 22px;
+    background: rgba(212,168,67,0.15);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    color: var(--gold);
+    margin-top: -2px;
+  }
+  .cta-full {
+    display: block;
+    background: var(--gold);
+    color: var(--dark);
+    font-weight: 700;
+    font-size: 16px;
+    padding: 18px 24px;
+    border-radius: 100px;
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+    border: none;
+    width: 100%;
+    position: relative; z-index: 1;
+  }
+  .cta-full:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(212,168,67,0.35); }
+  .price-guarantee {
+    font-size: 12px;
+    color: rgba(255,255,255,0.3);
+    margin-top: 16px;
+    position: relative; z-index: 1;
+  }
+
+  /* ── PRICING CONTACT BLOCK ── */
+  .price-contact-block {
+    position: relative; z-index: 1;
+    border: 1px solid rgba(212,168,67,0.25);
+    border-radius: 14px;
+    padding: 22px 20px;
+    margin: 20px 0 28px;
+    background: rgba(212,168,67,0.06);
+    text-align: center;
+  }
+  .price-contact-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px; height: 56px;
+    background: rgba(212,168,67,0.12);
+    border-radius: 50%;
+    margin: 0 auto 12px;
+  }
+  .price-contact-label {
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 8px;
+  }
+  .price-contact-email {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    color: var(--gold);
+    font-style: italic;
+    font-weight: 700;
+  }
+
+  /* ── FAQ ── */
+  .faq-section { background: var(--white); padding: 72px 24px; }
+  .faq-inner { max-width: 640px; margin: 0 auto; }
+  .faq-item { border-bottom: 1px solid rgba(0,0,0,0.07); padding: 20px 0; }
+  .faq-q {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--dark);
+    margin-bottom: 8px;
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+  }
+  .faq-q span:first-child {
+    color: var(--gold);
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    line-height: 1.1;
+    flex-shrink: 0;
+  }
+  .faq-a { font-size: 14px; color: var(--muted); line-height: 1.7; padding-left: 28px; }
+
+  /* ── FOOTER CTA ── */
+  .footer-cta {
+    background: var(--gold);
+    padding: 72px 24px;
+    text-align: center;
+  }
+  .footer-cta h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 4vw, 44px);
+    color: var(--dark);
+    margin-bottom: 14px;
+    font-weight: 900;
+  }
+  .footer-cta p { color: rgba(26,18,9,0.65); font-size: 17px; margin-bottom: 28px; }
+  .cta-dark {
+    display: inline-block;
+    background: var(--dark);
+    color: var(--gold);
+    font-weight: 700;
+    font-size: 16px;
+    padding: 16px 40px;
+    border-radius: 100px;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+  }
+  .footer-contact { margin-top: 28px; font-size: 13px; color: rgba(26,18,9,0.5); }
+  .footer-contact a { color: var(--dark); font-weight: 500; }
+
+  /* ── FOOTER CONTACT CHIPS ── */
+  .footer-contact-label {
+    margin-top: 28px;
+    font-size: 13px;
+    color: rgba(26,18,9,0.5);
+    margin-bottom: 16px;
+  }
+  .footer-contact-row {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .contact-chip {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    background: var(--dark);
+    text-decoration: none;
+    padding: 12px 20px 12px 14px;
+    border-radius: 16px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    min-width: 220px;
+  }
+  .contact-chip:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 28px rgba(26,18,9,0.25);
+  }
+  .contact-chip-icon {
+    width: 44px; height: 44px;
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .contact-chip-email .contact-chip-icon {
+    background: rgba(212,168,67,0.15);
+    border: 1px solid rgba(212,168,67,0.25);
+  }
+  .contact-chip-whatsapp .contact-chip-icon {
+    background: rgba(37,211,102,0.12);
+    border: 1px solid rgba(37,211,102,0.25);
+  }
+  .contact-chip-text {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    text-align: left;
+  }
+  .contact-chip-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: rgba(255,255,255,0.4);
+    font-weight: 500;
+  }
+  .contact-chip-value {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--white);
+    letter-spacing: -0.2px;
+  }
+
+  /* ── MODAL CONTACT FORM ── */
+  .modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(26,18,9,0.82);
+    z-index: 1000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+  }
+  .modal-overlay.open { display: flex; }
+  .modal-box {
+    background: var(--white);
+    border-radius: 22px;
+    padding: 44px 40px 36px;
+    width: 100%;
+    max-width: 480px;
+    position: relative;
+    animation: modalIn 0.25s ease;
+  }
+  @keyframes modalIn {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .modal-close {
+    position: absolute;
+    top: 18px; right: 22px;
+    background: var(--cream);
+    border: none;
+    width: 32px; height: 32px;
+    border-radius: 50%;
+    font-size: 18px;
+    cursor: pointer;
+    color: var(--muted);
+    display: flex; align-items: center; justify-content: center;
+    transition: background 0.2s;
+  }
+  .modal-close:hover { background: #ede8de; }
+  .modal-eyebrow {
+    font-size: 11px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--gold-dark);
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  .modal-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 6px;
+    line-height: 1.2;
+  }
+  .modal-subtitle {
+    font-size: 14px;
+    color: var(--muted);
+    margin-bottom: 28px;
+    line-height: 1.6;
+  }
+  .form-group { margin-bottom: 16px; }
+  .form-group label {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--dark);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 7px;
+  }
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid rgba(0,0,0,0.12);
+    border-radius: 10px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    color: var(--dark);
+    background: var(--cream);
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    resize: vertical;
+    box-sizing: border-box;
+  }
+  .form-group input:focus,
+  .form-group textarea:focus {
+    border-color: var(--gold);
+    box-shadow: 0 0 0 3px rgba(212,168,67,0.12);
+  }
+  .form-group textarea { min-height: 110px; }
+  .form-submit {
+    width: 100%;
+    background: var(--dark);
+    color: var(--gold);
+    font-weight: 700;
+    font-size: 16px;
+    padding: 16px;
+    border-radius: 100px;
+    border: none;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    margin-top: 8px;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .form-submit:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(26,18,9,0.2); }
+  .form-submit:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+  .form-success {
+    display: none;
+    text-align: center;
+    padding: 24px 0 8px;
+  }
+  .form-success-icon {
+    width: 60px; height: 60px;
+    background: rgba(99,180,83,0.12);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 16px;
+    font-size: 28px;
+  }
+  .form-success h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    color: var(--dark);
+    margin-bottom: 8px;
+  }
+  .form-success p { font-size: 14px; color: var(--muted); line-height: 1.6; }
+  .form-note {
+    font-size: 11px;
+    color: var(--muted);
+    text-align: center;
+    margin-top: 12px;
+    line-height: 1.5;
+  }
+
+  .section-divider {
+    width: 100%; height: 1px;
+    background: linear-gradient(to right, transparent, rgba(212,168,67,0.3), transparent);
+  }
+  .center { text-align: center; }
+  .mt-8 { margin-top: 8px; }
+  .mt-16 { margin-top: 16px; }
+  .mt-32 { margin-top: 32px; }
+
+  /* ── STORYTELLING ── */
+  .story-block { margin-bottom: 20px; }
+  .story-block p {
+    font-size: 17px;
+    color: var(--text);
+    line-height: 1.85;
+    margin-bottom: 14px;
+  }
+  .story-block p em { color: var(--dark); font-style: italic; font-weight: 500; }
+  .story-quote {
+    background: var(--white);
+    border-left: 3px solid var(--gold);
+    padding: 18px 22px;
+    margin: 28px 0;
+    border-radius: 0 var(--r) var(--r) 0;
+    font-size: 16px;
+    font-style: italic;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+  .story-emphasis {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(22px, 3vw, 32px);
+    font-style: italic;
+    font-weight: 700;
+    color: var(--dark);
+    text-align: center;
+    margin: 28px 0;
+    line-height: 1.3;
+  }
+
+  /* ── AUTHOR STORYTELLING ── */
+  .author-bio p {
+    font-size: 16px;
+    line-height: 1.9;
+    color: rgba(255,255,255,0.65);
+    margin-bottom: 16px;
+    max-width: 580px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .author-question {
+    font-size: 17px !important;
+    color: var(--gold) !important;
+    font-style: italic;
+    border-left: 2px solid rgba(212,168,67,0.4);
+    padding-left: 18px;
+    margin: 20px auto !important;
+    text-align: left;
+    max-width: 520px !important;
+  }
+
+  /* ── BONUS STORYTELLING ── */
+  .bonus-story { margin-bottom: 18px; }
+  .bonus-story p {
+    font-size: 16px;
+    color: var(--muted);
+    line-height: 1.8;
+    margin-bottom: 12px;
+  }
+  .bonus-story strong { color: var(--dark); }
+  .bonus-inner-quote {
+    background: var(--cream);
+    border: 1px solid rgba(212,168,67,0.3);
+    border-left: 3px solid var(--gold);
+    padding: 16px 20px;
+    border-radius: 0 var(--r) var(--r) 0;
+    font-size: 16px;
+    font-style: italic;
+    color: var(--dark);
+    margin: 20px 0;
+    text-align: left;
+    line-height: 1.6;
+  }
+  .bonus-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    color: var(--dark);
+    margin-top: 20px;
+    margin-bottom: 0;
+  }
+</style>
+</head>
+<body>
+
+<!-- ──── HERO ──── -->
+<section class="hero">
+  <div class="hero-badge">✦ Pour débutants ambitieux</div>
+  <h1>Maîtrise le Freelancing<br>et <span>Génère tes Premiers Revenus</span></h1>
+  <p class="hero-sub">Le guide complet des <strong>17 compétences les plus rentables</strong> du marché digital — avec un accompagnement personnalisé après achat.</p>
+  <button class="cta-primary" onclick="document.querySelector('.pricing-section').scrollIntoView({behavior:'smooth'})">Je veux l'ebook maintenant →</button>
+  <div class="hero-proof">
+    <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg> Livraison instantanée</span>
+    <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg> Bonus accompagnement inclus</span>
+  </div>
+  <div class="hero-divider"></div>
+</section>
+
+<!-- ──── PROBLÈME / STORYTELLING ──── -->
+<div class="section-divider"></div>
+<section>
+  <div class="section">
+    <p class="section-label">Dis-moi si ça te parle</p>
+    <h2>C'est dimanche soir. Tu as ton téléphone en main. Et tu scrolles encore.</h2>
+
+    <div class="story-block">
+      <p>Tu ouvres YouTube. Tu tapes <em>"gagner de l'argent en ligne"</em>. Une vidéo sur le montage vidéo. Puis une sur le copywriting. Puis une sur les agents IA. Chacun jure que <em>sa</em> méthode est la meilleure, la plus rapide, la plus rentable.</p>
+
+      <p>À minuit passé, tu fermes l'écran. Pas parce que tu as trouvé une réponse. Mais parce que tu es épuisé de chercher.</p>
+
+      <p>Le lendemain, tu recommences. Parce que l'ambition, tu l'as. Ce qui manque, c'est la clarté.</p>
+    </div>
+
+    <div class="story-quote">
+      "Entre le design, le montage, le développement, le copywriting… j'ai peur de choisir la mauvaise voie et de perdre encore des mois."
+    </div>
+
+    <div class="story-block">
+      <p>Pendant ce temps, sur Instagram, quelqu'un que tu connais annonce son premier client freelance. Tu es sincèrement content pour lui. Mais au fond, cette petite voix — tu la reconnais — qui murmure :</p>
+    </div>
+
+    <div class="story-emphasis">Pourquoi pas moi ?</div>
+
+    <div class="story-block">
+      <p>La réponse n'est pas que tu n'es pas capable. C'est que personne ne t'a jamais montré comment choisir <em>ta</em> compétence — pas celle qui est à la mode, pas celle que ton voisin a choisie. La tienne.</p>
+      <p>C'est exactement ce que ce guide fait.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ──── BOOK MOCKUP ──── -->
+<div class="section-divider"></div>
+<section class="book-section">
+  <div class="book-wrap">
+    <div class="book-cover">
+      <div class="book-cover-badge">Ebook · Guide Complet</div>
+      <h3>Les Compétences <span>Freelance</span> pour Débutants</h3>
+      <div class="book-cover-line"></div>
+      <p class="book-cover-author">Par Ruth</p>
+    </div>
+    <div class="book-badge-float">NOUVEAU<br>2026</div>
+  </div>
+  <h2 class="book-section-title">Ce que tu vas obtenir</h2>
+  <p class="book-section-sub">Un guide clair, actionnable et complet pour choisir ta compétence et commencer à générer des revenus.</p>
+</section>
+
+<!-- ──── COMPÉTENCES ──── -->
+<div class="section-divider"></div>
+<section class="skills-section">
+  <div class="skills-inner">
+    <div class="center">
+      <p class="section-label">Contenu de l'ebook</p>
+      <h2 style="font-family:'Playfair Display',serif; font-size:clamp(26px,4vw,40px); color:var(--dark);">17 compétences rentables expliquées</h2>
+      <p style="font-size:16px; color:var(--muted); margin-top:10px;">Pour chaque compétence : explication, qualités requises et pour qui c'est fait.</p>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-card"><span class="skill-num">01</span><span class="skill-name">Design Graphique</span></div>
+      <div class="skill-card"><span class="skill-num">02</span><span class="skill-name">Montage Vidéo</span></div>
+      <div class="skill-card"><span class="skill-num">03</span><span class="skill-name">Community Management</span></div>
+      <div class="skill-card"><span class="skill-num">04</span><span class="skill-name">Rédaction Web</span></div>
+      <div class="skill-card"><span class="skill-num">05</span><span class="skill-name">Copywriting</span></div>
+      <div class="skill-card"><span class="skill-num">06</span><span class="skill-name">Ghostwriting</span></div>
+      <div class="skill-card"><span class="skill-num">07</span><span class="skill-name">Email Marketing</span></div>
+      <div class="skill-card"><span class="skill-num">08</span><span class="skill-name">Marketing Digital</span></div>
+      <div class="skill-card"><span class="skill-num">09</span><span class="skill-name">Développement Web</span></div>
+      <div class="skill-card"><span class="skill-num">10</span><span class="skill-name">Gestion de Projet Digital</span></div>
+      <div class="skill-card"><span class="skill-num">11</span><span class="skill-name">Automatisation IA</span></div>
+      <div class="skill-card"><span class="skill-num">12</span><span class="skill-name">Création d'Agents IA</span></div>
+      <div class="skill-card"><span class="skill-num">13</span><span class="skill-name">Création de Chatbots</span></div>
+      <div class="skill-card"><span class="skill-num">14</span><span class="skill-name">Funnel Building</span></div>
+      <div class="skill-card"><span class="skill-num">15</span><span class="skill-name">Contenu Vidéo IA</span></div>
+      <div class="skill-card"><span class="skill-num">16</span><span class="skill-name">Media Buying</span></div>
+      <div class="skill-card"><span class="skill-num">17</span><span class="skill-name">Assistanat Virtuel</span></div>
+    </div>
+    <p class="mt-32" style="text-align:center; color:var(--muted); font-size:15px;">
+      + Les <strong style="color:var(--text)">10 erreurs majeures</strong> à éviter absolument en tant que freelance débutant.
+    </p>
+  </div>
+</section>
+
+<!-- ──── BONUS ──── -->
+<div class="section-divider"></div>
+<section class="bonus-section">
+  <p class="section-label center" style="text-align:center;">Ce que l'ebook seul ne peut pas faire</p>
+  <h2 style="font-family:'Playfair Display',serif; text-align:center; font-size:clamp(26px,4vw,38px); color:var(--dark); margin-bottom:36px;">La clé finale. Celle qui <em>débloque</em> tout.</h2>
+  <div class="bonus-card">
+    <div class="bonus-ribbon">✦ Bonus Exclusif après achat</div>
+    <div class="bonus-icon">
+      <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"></path>
+      </svg>
+    </div>
+
+    <div class="bonus-story">
+      <p>Tu lis l'ebook. Tu découvres les 17 compétences. Tu comprends enfin le paysage.</p>
+      <p>Et puis arrive ce moment inévitable :</p>
+    </div>
+
+    <div class="bonus-inner-quote">"Mais laquelle est vraiment faite pour <strong>moi</strong> ?"</div>
+
+    <div class="bonus-story">
+      <p>C'est le mur que la plupart des gens ne franchissent jamais seuls. Pas parce qu'ils ne sont pas capables — mais parce que personne n'est là pour les aider à faire le tri.</p>
+      <p>C'est exactement pour ça que j'ai créé ce bonus. Pas un PDF de plus. Pas un email automatique.</p>
+    </div>
+
+    <h3>Un appel, toi et moi, en direct.</h3>
+
+    <div class="bonus-story" style="margin-top: 16px;">
+      <p>On pose tes forces sur la table. On regarde ta personnalité, ton emploi du temps, tes envies profondes. Et ensemble, on choisit <strong>LA compétence</strong> par laquelle tu dois commencer — avec une feuille de route concrète.</p>
+      <p>Tu ne repars pas avec un "bonne chance". Tu repars avec un plan.</p>
+    </div>
+
+    <p style="font-size:13px; color:var(--gold-dark); font-weight:600; text-transform:uppercase; letter-spacing:1px; margin-top:24px;">
+      Inclus : Accès direct à notre communauté privée WhatsApp
+    </p>
+  </div>
+</section>
+
+<!-- ──── ERREURS ──── -->
+<div class="section-divider"></div>
+<section class="errors-section">
+  <div class="errors-inner">
+    <div class="center">
+      <p class="section-label" style="text-align:center;">À l'intérieur aussi</p>
+      <h2 style="font-family:'Playfair Display',serif; font-size:clamp(26px,4vw,38px); color:var(--dark); text-align:center; margin-bottom:10px;">10 erreurs à ne surtout pas faire</h2>
+      <p style="font-size:16px; color:var(--muted); text-align:center;">Pour ne pas gâcher tes chances dès le début.</p>
+    </div>
+    <div class="mt-32">
+      <div class="error-item">
+        <div class="error-x">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+        </div>
+        <div class="error-text"><strong>Vouloir gagner beaucoup trop vite</strong>Le freelancing est une graine — elle pousse, mais pas en une nuit.</div>
+      </div>
+      <div class="error-item">
+        <div class="error-x">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+        </div>
+        <div class="error-text"><strong>Choisir une compétence juste "à la mode"</strong>Sans passion, tu abandonneras au premier obstacle.</div>
+      </div>
+      <div class="error-item">
+        <div class="error-x">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+        </div>
+        <div class="error-text"><strong>Ne pas se former correctement</strong>Deux vidéos YouTube ne font pas de toi un professionnel.</div>
+      </div>
+      <div class="error-item">
+        <div class="error-x">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+        </div>
+        <div class="error-text"><strong>Travailler gratuitement trop longtemps</strong>Un freelance n'est pas un bénévole permanent.</div>
+      </div>
+    </div>
+    <p class="mt-16" style="font-size:14px; color:var(--muted); text-align: center;">→ Les autres erreurs sont détaillées dans l'ebook avec les solutions concrètes.</p>
+  </div>
+</section>
+
+<!-- ──── AUTHOR ──── -->
+<div class="section-divider"></div>
+<section class="author-section">
+  <div class="author-avatar">R</div>
+  <h2 class="author-name">Ruth</h2>
+  <p class="author-title">Freelance · Mentor Digital</p>
+  <div class="author-bio">
+    <p>Il n'y a pas si longtemps, j'étais exactement là où tu es.</p>
+    <p>Je passais mes soirées sur YouTube, convaincue que la prochaine vidéo allait enfin me donner LE plan. J'ai essayé le design. Puis le montage. Puis le trading. À chaque fois, la même histoire : quelques jours d'enthousiasme, puis l'abandon. Des semaines entières perdues sur des compétences qui ne me correspondaient tout simplement pas.</p>
+    <p>Le déclic est venu d'une question simple que je n'avais jamais pris le temps de me poser :</p>
+    <p class="author-question"><em>"Quelle compétence correspond vraiment à qui je suis — pas à la mode, pas aux autres. À moi ?"</em></p>
+    <p>Quand j'ai répondu honnêtement à cette question, tout a changé. J'ai arrêté de disperser mon énergie. J'ai choisi une voie. Et j'ai commencé à voir des résultats que je n'aurais jamais obtenus à tâtonner dans tous les sens.</p>
+    <p>Ce guide, c'est le raccourci que j'aurais voulu avoir. Celui qui m'aurait évité des mois de confusion. Je te le mets dans les mains pour que toi, tu n'aies pas à réinventer la roue.</p>
+  </div>
+</section>
+
+<!-- ──── PRICING ──── -->
+<div class="section-divider"></div>
+<section class="pricing-section" id="pricing">
+  <p class="section-label center" style="text-align:center;">Obtenir l'ebook</p>
+  <h2 style="font-family:'Playfair Display',serif; font-size:clamp(26px,4vw,40px); color:var(--dark); margin-bottom:12px; text-align:center;">Prêt à passer à l'action ?</h2>
+  <p style="text-align:center; max-width:480px; margin: 0 auto 40px; color:var(--muted); font-size:16px; line-height:1.7;">
+    Écris-moi directement par email. On discute du tarif ensemble et je t'envoie ton accès dès qu'on est alignés.
+  </p>
+
+  <div class="price-card">
+    <span class="price-label">Accès complet · Paiement unique</span>
+
+    <div class="price-contact-block">
+      <div class="price-contact-icon">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+          <polyline points="22,6 12,13 2,6"></polyline>
+        </svg>
+      </div>
+      <p class="price-contact-label">Tarif communiqué par email</p>
+      <p class="price-contact-email">lisebeth955@gmail.com</p>
+    </div>
+
+    <ul class="price-features">
+      <li>
+        <div class="check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+        Ebook complet (26 pages)
+      </li>
+      <li>
+        <div class="check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+        17 compétences expliquées en détail
+      </li>
+      <li>
+        <div class="check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+        10 erreurs à éviter + solutions
+      </li>
+      <li>
+        <div class="check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+        Bonus : call d'accompagnement personnalisé
+      </li>
+      <li>
+        <div class="check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+        Accès communauté WhatsApp
+      </li>
+    </ul>
+
+    <button onclick="openContactModal()" class="cta-full">
+      Écrire à Ruth pour le tarif →
+    </button>
+    <p class="price-guarantee">✓ Réponse rapide · Accès envoyé dès confirmation</p>
+  </div>
+</section>
+
+<!-- ──── FAQ ──── -->
+<div class="section-divider"></div>
+<section class="faq-section">
+  <div class="faq-inner">
+    <div class="center">
+      <p class="section-label" style="text-align:center;">Questions fréquentes</p>
+      <h2 style="font-family:'Playfair Display',serif; font-size:28px; color:var(--dark); margin-bottom:32px; text-align:center;">Tout ce que tu veux savoir</h2>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q"><span>Q</span><span>Pour qui cet ebook est-il fait ?</span></div>
+      <p class="faq-a">Pour toute personne qui veut se lancer dans le freelancing digital, que tu aies 0 expérience ou que tu cherches encore ta niche.</p>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q"><span>Q</span><span>Comment je reçois l'ebook après achat ?</span></div>
+      <p class="faq-a">Tu reçois un accès immédiat par email ou via le lien de téléchargement fourni après le paiement.</p>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q"><span>Q</span><span>En quoi consiste le call d'accompagnement ?</span></div>
+      <p class="faq-a">C'est une session personnalisée pour t'aider à identifier la compétence la plus adaptée à ton profil, tes forces et tes objectifs.</p>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q"><span>Q</span><span>Est-ce que cela marche vraiment ?</span></div>
+      <p class="faq-a">Le digital offre de vraies opportunités — j'en bénéficie moi-même. Ce guide te donne les bases pour y accéder structurellement, pas par hasard.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ──── FOOTER CTA ──── -->
+<div class="section-divider"></div>
+<section class="footer-cta">
+  <h2>Ton avenir en freelance<br>commence maintenant.</h2>
+  <p>Ne reste pas dans le doute. Passe à l'action.</p>
+  <button class="cta-dark" onclick="document.getElementById('pricing').scrollIntoView({behavior:'smooth'})">Voir l'offre →</button>
+  <p class="footer-contact-label">Des questions ? Contacte Ruth directement.</p>
+  <div class="footer-contact-row">
+
+    <button onclick="openContactModal()" class="contact-chip contact-chip-email" style="background:var(--dark); border:none; cursor:pointer;">
+      <span class="contact-chip-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D4A843" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="4" width="20" height="16" rx="3" ry="3"/>
+          <polyline points="2,4 12,14 22,4"/>
+        </svg>
+      </span>
+      <span class="contact-chip-text">
+        <span class="contact-chip-label">Email</span>
+        <span class="contact-chip-value">Envoyer un message</span>
+      </span>
+    </button>
+
+    <a href="https://whatsapp.com/channel/0029Vb6p8tF4Y9lhxQlZjT47" target="_blank" class="contact-chip contact-chip-whatsapp">
+      <span class="contact-chip-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="#25D366">
+          <path d="M20.52 3.48A11.93 11.93 0 0 0 12.01 0C5.44 0 .1 5.34.1 11.91c0 2.1.55 4.15 1.59 5.96L0 24l6.29-1.65a11.94 11.94 0 0 0 5.71 1.45h.01c6.57 0 11.91-5.34 11.91-11.91a11.82 11.82 0 0 0-3.4-8.36zm-8.51 18.32h-.01a9.9 9.9 0 0 1-5.04-1.38l-.36-.21-3.74.98.99-3.63-.24-.37A9.87 9.87 0 0 1 2.1 11.93C2.1 6.45 6.55 2 12.01 2a9.9 9.9 0 0 1 6.99 2.89 9.83 9.83 0 0 1 2.9 7c-.01 5.47-4.45 9.91-9.89 9.91zm5.42-7.42c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.4-1.47-.89-.79-1.49-1.76-1.66-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.44-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51-.17-.01-.37-.01-.57-.01-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.21 5.09 4.5.71.31 1.27.49 1.7.62.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.42.25-.69.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35z"/>
+        </svg>
+      </span>
+      <span class="contact-chip-text">
+        <span class="contact-chip-label">WhatsApp</span>
+        <span class="contact-chip-value">Rejoindre la communauté</span>
+      </span>
+    </a>
+
+  </div>
+</section>
+
+<!-- ──── MODAL CONTACT FORM ──── -->
+<div id="contact-modal" class="modal-overlay" onclick="handleOverlayClick(event)">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeContactModal()" aria-label="Fermer">✕</button>
+
+    <div id="modal-form-wrap">
+      <p class="modal-eyebrow">Contact</p>
+      <h3 class="modal-title">Envoie un message à Ruth</h3>
+      <p class="modal-subtitle">Remplis ce formulaire, Ruth te répondra directement pour te donner le tarif et les détails.</p>
+
+      <form id="contact-form" action="https://formspree.io/f/xojbzgnr" method="POST">
+        <div class="form-group">
+          <label for="fc-name">Ton prénom</label>
+          <input id="fc-name" type="text" name="name" placeholder="Ex : Aminata" required>
+        </div>
+        <div class="form-group">
+          <label for="fc-email">Ton adresse email</label>
+          <input id="fc-email" type="email" name="email" placeholder="toi@email.com" required>
+        </div>
+        <div class="form-group">
+          <label for="fc-msg">Ton message</label>
+          <textarea id="fc-msg" name="message" placeholder="Bonjour Ruth, je suis intéressé(e) par ton ebook…" required></textarea>
+        </div>
+        <button type="submit" class="form-submit" id="form-btn">Envoyer le message →</button>
+      </form>
+      <p class="form-note">Aucun spam. Tes données ne sont pas partagées.</p>
+    </div>
+
+    <div class="form-success" id="form-success">
+      <div class="form-success-icon">✓</div>
+      <h4>Message envoyé !</h4>
+      <p>Ruth a bien reçu ton message et te répondra très bientôt avec tous les détails.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+  function openContactModal() {
+    document.getElementById('contact-modal').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeContactModal() {
+    document.getElementById('contact-modal').classList.remove('open');
+    document.body.style.overflow = '';
+    setTimeout(() => {
+      document.getElementById('contact-form').reset();
+      document.getElementById('contact-form').style.display = '';
+      document.getElementById('form-success').style.display = 'none';
+      document.querySelector('.form-note').style.display = '';
+      document.querySelector('.modal-subtitle').style.display = '';
+      document.getElementById('form-btn').disabled = false;
+      document.getElementById('form-btn').textContent = 'Envoyer le message →';
+    }, 300);
+  }
+  function handleOverlayClick(e) {
+    if (e.target === document.getElementById('contact-modal')) closeContactModal();
+  }
+  document.getElementById('contact-form').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const btn = document.getElementById('form-btn');
+    btn.disabled = true;
+    btn.textContent = 'Envoi en cours…';
+    try {
+      const res = await fetch(this.action, {
+        method: 'POST',
+        body: new FormData(this),
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        this.style.display = 'none';
+        document.querySelector('.form-note').style.display = 'none';
+        document.querySelector('.modal-subtitle').style.display = 'none';
+        document.getElementById('form-success').style.display = 'block';
+      } else {
+        btn.disabled = false;
+        btn.textContent = 'Réessayer →';
+        alert('Une erreur est survenue. Merci de réessayer.');
+      }
+    } catch {
+      btn.disabled = false;
+      btn.textContent = 'Réessayer →';
+      alert('Problème de connexion. Merci de réessayer.');
+    }
+  });
+</script>
+
+</body>
+</html>
